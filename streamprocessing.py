@@ -102,7 +102,7 @@ finalsummarydf = summary_df.withColumn("uuid",make_uuid())\
 query2 =finalsummarydf.writeStream.trigger(processingTime="5 seconds") \
     .foreachBatch(
         lambda batchDF, batchID: batchDF.write.format("org.apache.spark.sql.cassandra") \
-            .options(table="running_averages_15_sec", keyspace="market") \
+            .options(table="running_averages", keyspace="market") \
             .mode("append").save()
             ).outputMode("update").start()
 query.awaitTermination()
