@@ -31,16 +31,6 @@ df = spark \
     .option("startingOffsets", "latest") \
     .load()
 
-inputDF = spark \
-    .readStream \
-    .format("kafka") \
-    .option("kafka.bootstrap.servers", "localhost:9092") \
-    .option("subscribe", "finnhub") \
-    .option("minPartitions", 2) \
-    .option("maxOffsetsPerTrigger", 1000) \
-    .option("useDeprecatedOffsetFetching", False) \
-    .load()
-
 
 # Define the schema for the JSON data
 finnhub_schema = StructType([
