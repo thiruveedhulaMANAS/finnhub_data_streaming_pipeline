@@ -1,6 +1,6 @@
 # Finnhub_data_streaming_pipeline
 
-The project is a streaming data pipeline based on the Finnhub.io API/websocket for real-time trade data connected to stream processing.
+The project is a streaming data pipeline based on the Finnhub.io API/websocket for real-time trade data and stream processing.
 It is designed with a purpose to showcase key aspects of streaming pipeline development & architecture, providing low latency, scalability & availability.
 
 ## Architecture
